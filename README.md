@@ -355,6 +355,8 @@ The full diagram, with notes on what each stage costs and what it filters:
 
 `label.py` builds a stratified labeled set. The stratification is intentional: I sample across composite-score bands instead of just the top picks, so I can see precision at every confidence level. Spot-checking the top would just confirm the obvious wins. The first iteration sampled 200 pairs and exposed the failure zone; I later scaled it to **540 pairs** for tighter confidence intervals on every metric below.
 
+> **How to read this section.** When we report a number like *0.76 (n=66)*, we mean: an independent judge looked at 66 of the matches the pipeline shipped and called 76% of them correct. **Precision** is the fraction of shipped matches that are correct — we report this rather than accuracy because in pricing, the costly error is *shipping a wrong match* (it gets indexed against a real product's price); missed matches just go to a human review queue. **`n`** is the size of the labeled sample. **Stratified** means we sampled across composite-score bands deliberately, so precision shows up at every confidence tier, not just the top.
+
 ### What the labels measured
 
 Pre-verification, on the v2 baseline output:
