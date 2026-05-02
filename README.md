@@ -59,7 +59,7 @@ The headline isn't the absolute count. It's that **building a held-out evaluatio
 
 ## The journey: how this pipeline got here
 
-This is the part most submissions skip. The architecture you see in this README isn't what I designed at the start. It's what survived the held-out evaluation.
+The architecture you see in this README isn't what I designed at the start — it's what survived the held-out evaluation.
 
 ### Step 1 — EDA and v1 design
 
@@ -424,7 +424,7 @@ The full report is in `artifacts/triangulation_report.json`. Pair-level Sonnet l
 - **Recall is not measured.** There's no labeled set of *all* true positive matches across the catalog; building one would require human enumeration on a sample of B items and is out of scope for a 540-pair stratified eval. Volume (12,485 vs 26,395 pre-verify) is the only recall proxy reported. A future iteration with a recall-anchored gold set would let us trade volume against verified yield directly instead of reading the trade-off from precision lift alone.
 - **Composite weights are hand-tuned, not learned.** The `(0.35, 0.20, 0.20, 0.15, 0.10)` split for `(emb, tfidf, size, brand, flags)` came from EDA spot-checks before the labeled set existed — embedding gets the largest weight as the primary retrieval signal, size and brand are weighted as the most discriminating attribute features, flags are a tiebreaker. ±0.05 perturbations on individual weights don't move per-stratum precision more than 1–2 points on the labeled set, suggesting the weights are in a reasonable basin. The next-week list proposes replacing them with a learned classifier on the same features.
 
-These are the right metrics to publish in spite of the noise. Hand-waved spot-checks would have said "looks great"; the labels exposed what spot-checks missed.
+These are the right metrics to publish in spite of the noise. Spot-checks would have said "looks great"; the labels exposed what spot-checks missed.
 
 ---
 
