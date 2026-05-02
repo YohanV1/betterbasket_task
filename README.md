@@ -1,5 +1,34 @@
 # BetterBasket Engineering Technical Assessment — Product Matching
 
+## Contents
+
+- [What is this?](#what-is-this)
+- [Headline numbers](#headline-numbers)
+- [The journey: how this pipeline got here](#the-journey-how-this-pipeline-got-here)
+  - [Step 1 — EDA and v1 design](#step-1--eda-and-v1-design)
+  - [Step 2 — Reviewer feedback that reshaped the build](#step-2--reviewer-feedback-that-reshaped-the-build)
+  - [Step 3 — v2 build](#step-3--v2-build)
+  - [Step 4 — The held-out evaluation, and what it broke](#step-4--the-held-out-evaluation-and-what-it-broke)
+  - [Step 5 — The fix the labels demanded](#step-5--the-fix-the-labels-demanded)
+  - [Step 6 — Quantifying the same-instrument floor](#step-6--quantifying-the-same-instrument-floor)
+- [How it works (a worked example)](#how-it-works-a-worked-example)
+  - [Worked example #2 — the failure-zone case Stage 7 was built to catch](#worked-example-2--the-failure-zone-case-stage-7-was-built-to-catch)
+- [Pipeline architecture (technical reference)](#pipeline-architecture-technical-reference)
+  - [Stage-by-stage cost / volume / why](#stage-by-stage-cost--volume--why)
+- [Evaluation](#evaluation)
+  - [What the labels measured](#what-the-labels-measured)
+  - [Pre-verification vs post-verification (apples-to-apples)](#pre-verification-vs-post-verification-apples-to-apples)
+  - [Diagnostic: is verification actually doing work?](#diagnostic-is-verification-actually-doing-work)
+  - [Triangulation: same-model floor, quantified](#triangulation-same-model-floor-quantified)
+  - [Caveats](#caveats)
+- [How this maps to BetterBasket's actual workflow](#how-this-maps-to-betterbaskets-actual-workflow)
+- [What I'd do with another week](#what-id-do-with-another-week)
+- [Quickstart](#quickstart)
+- [Repository layout](#repository-layout)
+- [Glossary (for non-ML readers)](#glossary-for-non-ml-readers)
+
+---
+
 ## What is this?
 
 Walmart and Wegmans both sell Coca-Cola. They both sell whole milk. They both sell pasta sauce. But their websites label these products slightly differently — different brand fields, different size formats, different category trees, sometimes the same product appears once at Walmart as "(3 pack) Coca-Cola 12 fl oz Cans" and once at Wegmans as plain "Coca-Cola 12 fl oz". My job for this task: given **233,199 products from Walmart** and **55,516 from Wegmans**, figure out which Walmart row corresponds to which Wegmans row, when one does. Output: a CSV of `(walmart_id, wegmans_id)` pairs.
