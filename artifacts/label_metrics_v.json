@@ -1,0 +1,29 @@
+{
+  "by_stratum": {
+    "very_high": {
+      "n": 180,
+      "true_positive": 100,
+      "precision": 0.556
+    },
+    "high": {
+      "n": 150,
+      "true_positive": 26,
+      "precision": 0.173
+    },
+    "ambig": {
+      "n": 156,
+      "true_positive": 10,
+      "precision": 0.064
+    },
+    "reject": {
+      "n": 28,
+      "true_positive": 1,
+      "precision": 0.036
+    }
+  },
+  "precision_at_1_overall": {
+    "n": 486,
+    "true_positive": 136,
+    "precision": 0.28
+  }
+}

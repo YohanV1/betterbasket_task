@@ -1,0 +1,24 @@
+# Credentials — never commit
+openai_creds.yaml
+anthropic_creds.yaml
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+*.egg-info/
+
+# Pipeline artifacts (regenerable; matches.csv is the deliverable + tracked)
+artifacts/llm_cache/
+artifacts/embed_cache/
+artifacts/triangulation_cache/
+artifacts/matches_full.csv
+artifacts/matches_full_pp.csv
+artifacts/matches_full_v.csv
+
+# OS
+.DS_Store
+
+# Editor
+.vscode/
+.idea/

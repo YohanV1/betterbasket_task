@@ -1,0 +1,13 @@
+{
+  "input_rows": 233199,
+  "rule_or_llm_accepted": 26395,
+  "after_xenc_accepted": 26378,
+  "consistent_among_accepted": 20492,
+  "consistency_rate": 0.777,
+  "xenc_dropped": 17,
+  "timings_s": {
+    "xenc_s": 192.9,
+    "consistency_s": 93.4
+  },
+  "xenc_threshold": 0.3
+}

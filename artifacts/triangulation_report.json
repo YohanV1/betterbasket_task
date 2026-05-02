@@ -1,0 +1,30 @@
+{
+  "model": "claude-sonnet-4-6",
+  "n_eligible": 100,
+  "n_valid_both_judges": 66,
+  "gpt5nano_precision": 0.621,
+  "sonnet_precision": 0.758,
+  "delta_sonnet_minus_nano": 0.137,
+  "agreement_rate": 0.864,
+  "by_stratum": {
+    "ambig": {
+      "n": 6,
+      "nano_precision": 0.5,
+      "sonnet_precision": 0.667,
+      "agreement": 0.833
+    },
+    "high": {
+      "n": 23,
+      "nano_precision": 0.348,
+      "sonnet_precision": 0.478,
+      "agreement": 0.87
+    },
+    "very_high": {
+      "n": 37,
+      "nano_precision": 0.811,
+      "sonnet_precision": 0.946,
+      "agreement": 0.865
+    }
+  },
+  "elapsed_s": 746.4
+}

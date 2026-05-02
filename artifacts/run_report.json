@@ -1,0 +1,32 @@
+{
+  "total_a_items": 233199,
+  "total_b_items": 55516,
+  "matches_emitted": 26395,
+  "tier_counts": {
+    "no_candidates": 107294,
+    "auto_reject": 89019,
+    "auto_accept": 25205,
+    "llm_reject": 10491,
+    "llm_accept": 1190
+  },
+  "timings_s": {
+    "load_s": 2.0,
+    "normalize_s": 10.5,
+    "match_s": 308.0,
+    "llm_s": 1952.5,
+    "total_s": 2275.5
+  },
+  "thresholds": {
+    "tau_high": 0.78,
+    "tau_low": 0.5,
+    "name_sim_floor": 0.3,
+    "top_k": 8
+  },
+  "weights": {
+    "emb": 0.35,
+    "tfidf": 0.2,
+    "size": 0.2,
+    "brand": 0.15,
+    "flags": 0.1
+  }
+}
