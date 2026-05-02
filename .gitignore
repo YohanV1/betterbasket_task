@@ -22,3 +22,5 @@ artifacts/matches_full_v.csv
 # Editor
 .vscode/
 .idea/
+grocery_store_a_items_final.csv
+grocery_store_b_items_final.csv
